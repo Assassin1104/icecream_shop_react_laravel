@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+html {
+    @apply text-gray-800;
+}
+@layer components {
+    .title {
+        @apply font-medium uppercase tracking-widest transition duration-150 ease-in-out;
+    }
+    .btn {
+        @apply title relative inline-block outline-offset-0;
+    }
+    .btn::before,
+    .btn::after {
+        @apply absolute inset-0 border border-gray-800 transition duration-200 content-[''];
+    }
+    .btn:hover::before,
+    .btn:hover::after {
+        @apply translate-y-0 translate-x-0;
+    }
+    .btn:before {
+        @apply translate-x-0.5 translate-y-0.5;
+    }
+    .btn:after {
+        @apply -translate-x-0.5 -translate-y-0.5;
+    }
+
+    .btn-md {
+        @apply px-10 py-2.5 text-sm;
+    }
+    /* .btn > .btn-border-1 {
+        @apply absolute inset-0 translate-x-0.5 translate-y-0.5  border border-gray-800 transition duration-200;
+    }
+    .btn > .btn-border-2 {
+        @apply absolute inset-0 -translate-x-0.5 -translate-y-0.5  border border-gray-800 transition duration-200;
+    }
+    .btn:hover > .btn-border-1,
+    .btn:hover > .btn-border-2 {
+        @apply translate-y-0 translate-x-0  transition duration-200;
+    } */
+}
+
+@layer utilities {
+    .py-section {
+        @apply py-28;
+    }
+    .pb-section {
+        @apply pb-28;
+    }
+    .pt-section {
+        @apply pt-28;
+    }
+    /* //md */
+    @media (min-width: 768px) {
+        .py-section {
+            @apply py-32;
+        }
+        .pb-section {
+            @apply pb-32;
+        }
+        .pt-section {
+            @apply pt-32;
+        }
+    }
+
+    /* //lg */
+    @media (min-width: 1024px) {
+        .py-section {
+            @apply py-36;
+        }
+        .pb-section {
+            @apply pb-36;
+        }
+        .pt-section {
+            @apply pt-36;
+        }
+    }
+    /* //xl */
+    @media (min-width: 1280px) {
+        .py-section {
+            @apply py-40;
+        }
+        .pb-section {
+            @apply pb-40;
+        }
+        .pt-section {
+            @apply pt-40;
+        }
+    }
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    content: "" !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    width: 70px !important;
+    height: 70px !important;
+}
+.swiper-button-next {
+    right: -10px !important;
+}
+.swiper-button-prev {
+    left: -10px !important;
+}
+.swiper-wrapper {
+    align-items: center;
+}
+#nprogress .bar{
+    height: 4px !important;
+}
+#nprogress .spinner-icon{
+    width: 25px !important;
+    height: 25px !important;
+}
